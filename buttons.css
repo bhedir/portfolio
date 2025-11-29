@@ -1,0 +1,66 @@
+/* GLOBAL FIXED SIDE BUTTONS */
+.side-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px 20px;
+  
+  /* NEW STYLE (matching footer aesthetics) */
+  background-color: rgba(20, 20, 28, 0.4);
+  color: #958173;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+
+  border: 1px solid rgba(142, 110, 91, 0.2);
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(142, 110, 91, 0.2);
+
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+
+/* HOVER STYLE (matching social bubbles animation style) */
+.side-btn:hover {
+  background-color: #8e6e5b;
+  color: #fff;
+}
+
+.side-btn:hover svg {
+  animation: slide-in-top 0.3s both;
+}
+
+/* LEFT BUTTON */
+.side-btn.left {
+  left: 20px;
+}
+
+/* RIGHT BUTTON */
+.side-btn.right {
+  right: 20px;
+}
+
+/* SVG ICONS */
+.side-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  transition: 0.3s ease;
+}
+
+/* POPUP ANIMATION (same as footer icons) */
+@keyframes slide-in-top {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+  .side-btn {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}
