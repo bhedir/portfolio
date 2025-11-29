@@ -1,0 +1,257 @@
+/* PAGE BACKGROUND — SAME THEME */
+body {
+  background: #05060f;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  
+}
+
+/* TITLE — SAME COLOR AS EXPERIENCE PAGE */
+.title {
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+  color: #b39a84; /* warm bisque tone */
+}
+
+/* CARDS LAYOUT */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* CARD STYLE — MATCHING YOUR PALETTE */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 330px;
+  padding: 18px 22px;
+
+  background: linear-gradient(
+    120deg,
+    #c9b7a0 60%,     /* bisque darker */
+    #d9bba7 80%,     /* warm gradient */
+    #d8a78b 40%,     /* coral light */
+    rgba(204, 88, 56, 0.4) 30% /* coral */
+  );
+
+  border-radius: 18px;
+  box-shadow: 0 20px 25px -5px rgba(204, 88, 56, 0.15);
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 35px 35px -5px rgba(204, 88, 56, 0.25);
+}
+
+.cards:hover > .card:not(:hover) {
+  filter: blur(8px);
+  transform: scale(0.9);
+}
+
+/* BADGE IMAGE */
+.badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 5px;
+}
+
+/* CERTIFICATION NAME */
+.cert-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #a85a45; /* coral — same as UI buttons */
+}
+/* BUTTONS – SAME PALETTE ################################################ */
+
+.small-left {
+  float: left;
+  margin-top: 20px;
+}
+
+.small-left span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding-left: 8px;
+  padding-bottom: 5px;
+}
+
+.small-left svg {
+  width: 22px;
+  transform: translateX(6px);
+}
+
+.cta-left {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #a85a45;
+}
+
+.cta-left svg path {
+  stroke: #a85a45;
+}
+
+.cta-left svg {
+  transition: all 0.3s ease;
+}
+
+.cta-left:hover svg {
+  transform: translateX(0);
+}
+
+.hover-underline-animation-left {
+  position: relative;
+}
+
+.hover-underline-animation-left:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: -2px;
+  left: 0;
+  background-color: rgba(204, 88, 56, 0.8);
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+
+.cta-left:hover .hover-underline-animation-left:after {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+}
+
+/* RIGHT BUTTON ------------------------ */
+
+.small-right {
+  float: right;
+  margin-top: 20px;
+}
+
+.small-right span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding-right: 8px;
+  padding-bottom: 5px;
+}
+
+.small-right svg {
+  width: 22px;
+  transform: translateX(-6px);
+}
+
+.cta {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #a85a45;
+}
+
+.cta svg path {
+  stroke: #a85a45;
+}
+
+.cta svg {
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.hover-underline-animation {
+  position: relative;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: -2px;
+  left: 0;
+  background-color: rgba(204, 88, 56, 0.8);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* BUTTON ROW — CENTERED */
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.small-left, .small-right {
+  float: none !important;
+  margin-top: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+  }
+}
+/* STAR BACKGROUND LAYERS (NO CHANGES TO YOUR DESIGN) */
+.stars, .stars2, .stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.stars {
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.7;
+  animation: moveStars 140s linear infinite;
+}
+
+.stars2 {
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.4;
+  animation: moveStars 200s linear infinite;
+}
+
+.stars3 {
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.2;
+  animation: moveStars 260s linear infinite;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 2000px 2000px; }
+}
