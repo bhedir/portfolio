@@ -190,3 +190,71 @@ button:hover svg {
 button:hover span {
   transform: translateX(7px);
 }
+/* ===================== */
+/*   MOBILE OPTIMIZATION */
+/* ===================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .parent {
+    width: 350px;
+    height: auto;
+  }
+
+  .content {
+    padding: 80px 40px 20px 20px;
+  }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+  /* Prevent sideways scrolling */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Card resizing */
+  .parent {
+    width: 92%;
+    height: auto; /* card grows with text */
+  }
+
+  /* Reduce 3D animation on phones (smooth & faster) */
+  .parent:hover .card {
+    transform: none;
+  }
+
+  /* Content spacing */
+  .content {
+    padding: 60px 20px 20px 20px;
+  }
+
+  .content .title {
+    font-size: 18px;
+  }
+
+  .content .text {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  /* Smaller circles for the logo */
+  .logo .circle1 { width: 120px; }
+  .logo .circle2 { width: 100px; }
+  .logo .circle3 { width: 80px; }
+  .logo .circle4 { width: 60px; }
+  .logo .circle5 { width: 40px; }
+
+  /* Reduce star animation for performance */
+  .stars, .stars2, .stars3 {
+    opacity: 0.3;
+    animation-duration: 200s;
+  }
+}
