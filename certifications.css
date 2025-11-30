@@ -7,22 +7,42 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
-  
 }
 
 /* TITLE — SAME COLOR AS EXPERIENCE PAGE */
 .title {
   font-size: 2.4rem;
-  margin-bottom: 50px;
+  margin: 0; /* Remove margin because wrapper handles spacing */
   color: #b39a84; /* warm bisque tone */
+  padding: 10px 0;
 }
 
-/* CARDS LAYOUT */
+/* Title wrapper: keeps title centered while allowing a button positioned on the right */
+.title-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* position the button on the right side of the title line without moving the centered title */
+.title-wrapper button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* NEW GRID LAYOUT FOR CARDS */
 .cards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Left – Center – Right */
+  gap: 25px;
+  width: 100%;
+  max-width: 1100px;
+  justify-items: center;
+  margin-top: 20px;
 }
 
 /* CARD STYLE — MATCHING YOUR PALETTE */
@@ -73,154 +93,23 @@ body {
   font-weight: 700;
   color: #a85a45; /* coral — same as UI buttons */
 }
-/* BUTTONS – SAME PALETTE ################################################ */
-
-.small-left {
-  float: left;
-  margin-top: 20px;
-}
-
-.small-left span {
-  font-size: 12px;
-  letter-spacing: 2px;
-  padding-left: 8px;
-  padding-bottom: 5px;
-}
-
-.small-left svg {
-  width: 22px;
-  transform: translateX(6px);
-}
-
-.cta-left {
-  border: none;
-  background: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: #a85a45;
-}
-
-.cta-left svg path {
-  stroke: #a85a45;
-}
-
-.cta-left svg {
-  transition: all 0.3s ease;
-}
-
-.cta-left:hover svg {
-  transform: translateX(0);
-}
-
-.hover-underline-animation-left {
-  position: relative;
-}
-
-.hover-underline-animation-left:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1.5px;
-  bottom: -2px;
-  left: 0;
-  background-color: rgba(204, 88, 56, 0.8);
-  transform-origin: bottom left;
-  transition: transform 0.25s ease-out;
-}
-
-.cta-left:hover .hover-underline-animation-left:after {
-  transform: scaleX(1);
-  transform-origin: bottom right;
-}
-
-/* RIGHT BUTTON ------------------------ */
-
-.small-right {
-  float: right;
-  margin-top: 20px;
-}
-
-.small-right span {
-  font-size: 12px;
-  letter-spacing: 2px;
-  padding-right: 8px;
-  padding-bottom: 5px;
-}
-
-.small-right svg {
-  width: 22px;
-  transform: translateX(-6px);
-}
-
-.cta {
-  border: none;
-  background: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: #a85a45;
-}
-
-.cta svg path {
-  stroke: #a85a45;
-}
-
-.cta svg {
-  transition: all 0.3s ease;
-}
-
-.cta:hover svg {
-  transform: translateX(0);
-}
-
-.hover-underline-animation {
-  position: relative;
-}
-
-.hover-underline-animation:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1.5px;
-  bottom: -2px;
-  left: 0;
-  background-color: rgba(204, 88, 56, 0.8);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.cta:hover .hover-underline-animation:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-/* BUTTON ROW — CENTERED */
-.button-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.small-left, .small-right {
-  float: none !important;
-  margin-top: 0;
-}
 
 /* RESPONSIVE */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+  }
+}
+
 @media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
   .card {
     width: 90%;
   }
 }
+
 /* STAR BACKGROUND LAYERS (NO CHANGES TO YOUR DESIGN) */
 .stars, .stars2, .stars3 {
   position: fixed;
@@ -254,4 +143,42 @@ body {
 @keyframes moveStars {
   from { background-position: 0 0; }
   to { background-position: 2000px 2000px; }
+}
+
+/* ---------------------------
+   YOUR BUTTON CSS - verbatim
+   --------------------------- */
+
+button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(to right, #706052, #8e6e5b, #958173);
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 16px;
+}
+
+button svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+button:hover span {
+  transform: translateX(7px);
 }

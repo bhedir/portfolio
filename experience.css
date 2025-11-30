@@ -17,7 +17,7 @@ body {
 .title {
   font-size: 2.4rem;
   margin-bottom: 60px;
-  color: #b39a84; /* darker version of #ffd0c2 */
+  color: #b39a84;
 }
 
 .cards-container {
@@ -42,10 +42,10 @@ body {
   border-radius: 50px;
   background: linear-gradient(
     120deg,
-    #c9b7a0 60%, /* darker bisque */
-    #d9bba7 88%, /* darker rgb(255,231,222) */
-    #d8a78b 40%, /* darker rgb(255,211,195) */
-    rgba(204, 88, 56, 0.603) 48% /* darker rgba(255,127,80,0.603) */
+    #c9b7a0 60%,
+    #d9bba7 88%,
+    #d8a78b 40%,
+    rgba(204, 88, 56, 0.603) 48%
   );
   transition: all 0.5s ease-in-out;
   transform-style: preserve-3d;
@@ -77,13 +77,13 @@ body {
 }
 
 .content .title {
-  color: #a85a45; /* darker coral */
+  color: #a85a45;
   font-weight: 900;
   font-size: 20px;
 }
 
 .content .text {
-  color: #50453e; /* lighter bisque */
+  color: #50453e;
   font-size: 15px;
   margin-top: 20px;
 }
@@ -120,7 +120,7 @@ body {
   position: absolute;
   border-radius: 50%;
   backdrop-filter: blur(6px);
-  background: rgba(204, 88, 56, 0.25); /* darker coral */
+  background: rgba(204, 88, 56, 0.25);
   transition: all 0.5s ease-in-out;
 }
 
@@ -132,7 +132,8 @@ body {
 
 .parent:hover .card {
   transform: rotate3d(1, 1, 0, 30deg);
-  box-shadow: 0 50px 25px -40px rgba(204, 88, 56, 0.3), 0px 25px 30px rgba(204, 88, 56, 0.1);
+  box-shadow: 0 50px 25px -40px rgba(204, 88, 56, 0.3),
+              0px 25px 30px rgba(204, 88, 56, 0.1);
 }
 
 .parent:hover .card .logo .circle2 { transform: translate3d(0,0,60px); }
@@ -140,172 +141,15 @@ body {
 .parent:hover .card .logo .circle4 { transform: translate3d(0,0,100px); }
 .parent:hover .card .logo .circle5 { transform: translate3d(0,0,120px); }
 
-/* Place button fully on the right */
-.small-right {
-  float: right;
-  margin-top: 20px;
-}
-
-/* Make the button smaller */
-.small-right span {
-  font-size: 12px;
-  letter-spacing: 2px;
-  padding-right: 8px;
-  padding-bottom: 5px;
-}
-
-/* Size of the arrow */
-.small-right svg {
-  width: 22px;
-  transform: translateX(-6px);
-}
-
-/* Base CTA button with palette colors */
-.cta {
-  border: none;
-  background: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-
-  /* TEXT COLOR → matches the palette */
-  color: #a85a45;
-}
-
-/* Arrow animation */
-.cta svg path {
-  stroke: #a85a45; /* arrow uses same color */
-}
-
-.cta svg {
-  transition: all 0.3s ease;
-}
-
-.cta:hover svg {
-  transform: translateX(0);
-}
-
-/* Underline animation */
-.hover-underline-animation {
-  position: relative;
-}
-
-.hover-underline-animation:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1.5px;
-  bottom: -2px;
-  left: 0;
-
-  /* underline color in palette */
-  background-color: rgba(204, 88, 56, 0.8);
-
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.cta:hover .hover-underline-animation:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-/* Place left button fully on the left */
-.small-left {
-  float: left;
-  margin-top: 20px;
-}
-
-/* Make left button small like the right one */
-.small-left span {
-  font-size: 12px;
-  letter-spacing: 2px;
-  padding-left: 8px;
-  padding-bottom: 5px;
-}
-
-/* Arrow size */
-.small-left svg {
-  width: 22px;
-  transform: translateX(6px); /* slide from left */
-}
-
-/* Base CTA left button */
-.cta-left {
-  border: none;
-  background: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-
-  /* Color matching your theme */
-  color: #a85a45;
-}
-
-.cta-left svg path {
-  stroke: #a85a45;
-}
-
-/* Hover animation (arrow moves left) */
-.cta-left svg {
-  transition: all 0.3s ease;
-}
-
-.cta-left:hover svg {
-  transform: translateX(0);
-}
-
-/* Underline animation left version */
-.hover-underline-animation-left {
-  position: relative;
-}
-
-.hover-underline-animation-left:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1.5px;
-  bottom: -2px;
-  left: 0;
-
-  background-color: rgba(204, 88, 56, 0.8); /* same underline color */
-
-  transform-origin: bottom left;
-  transition: transform 0.25s ease-out;
-}
-
-.cta-left:hover .hover-underline-animation-left:after {
-  transform: scaleX(1);
-  transform-origin: bottom right;
-}
-/* Center both buttons side-by-side */
-.button-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px; /* space between buttons */
-  margin-top: 190px;
-}
-
-/* Remove floating since buttons are now centered */
-.small-left, .small-right {
-  float: none !important;
-  margin-top: 0;
-}
-
-
 /* RESPONSIVE */
 @media (max-width: 800px) {
-  .cards-container { flex-direction: column; align-items: center; }
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-/* STAR BACKGROUND LAYERS (NO CHANGES TO YOUR DESIGN) */
+/* STAR BACKGROUND LAYERS */
 .stars, .stars2, .stars3 {
   position: fixed;
   top: 0;
@@ -339,4 +183,3 @@ body {
   from { background-position: 0 0; }
   to { background-position: 2000px 2000px; }
 }
-
