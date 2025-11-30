@@ -190,71 +190,74 @@ button:hover svg {
 button:hover span {
   transform: translateX(7px);
 }
-/* ===================== */
-/*   MOBILE OPTIMIZATION */
-/* ===================== */
+/* ================================= */
+/*      CLEAN & CORRECT MOBILE FIX   */
+/* ================================= */
 
 /* Tablet */
-@media (max-width: 768px) {
-  .cards-container {
-    flex-direction: column;
-    gap: 25px;
-    align-items: center;
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr 1fr; /* 2 per row on tablets */
+    gap: 20px;
   }
 
-  .parent {
-    width: 350px;
-    height: auto;
-  }
-
-  .content {
-    padding: 80px 40px 20px 20px;
+  .card {
+    width: 95%;
+    padding: 16px 18px;
   }
 }
 
 /* Phone */
-@media (max-width: 480px) {
-  /* Prevent sideways scrolling */
-  html, body {
-    overflow-x: hidden;
+@media (max-width: 600px) {
+  body {
+    padding: 10px 0;
   }
 
-  /* Card resizing */
-  .parent {
-    width: 92%;
-    height: auto; /* card grows with text */
+  .title {
+    font-size: 1.9rem;
   }
 
-  /* Reduce 3D animation on phones (smooth & faster) */
-  .parent:hover .card {
-    transform: none;
+  .cards {
+    grid-template-columns: 1fr; /* 1 per row */
+    gap: 18px;
+    width: 100%;
+    padding: 0 10px;
   }
 
-  /* Content spacing */
-  .content {
-    padding: 60px 20px 20px 20px;
+  .card {
+    width: 100%;
+    max-width: 360px;
+    padding: 16px 18px;
+    transform: none !important;
   }
 
-  .content .title {
-    font-size: 18px;
+  .cards:hover > .card:not(:hover) {
+    filter: none !important;
+    transform: none !important;
   }
 
-  .content .text {
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: justify;
+  .badge {
+    width: 50px;
+    height: 50px;
   }
 
-  /* Smaller circles for the logo */
-  .logo .circle1 { width: 120px; }
-  .logo .circle2 { width: 100px; }
-  .logo .circle3 { width: 80px; }
-  .logo .circle4 { width: 60px; }
-  .logo .circle5 { width: 40px; }
+  .cert-name {
+    font-size: 0.95rem;
+  }
+}
 
-  /* Reduce star animation for performance */
-  .stars, .stars2, .stars3 {
-    opacity: 0.3;
-    animation-duration: 200s;
+/* Very small phones */
+@media (max-width: 400px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    max-width: 330px;
+  }
+
+  .badge {
+    width: 45px;
+    height: 45px;
   }
 }
