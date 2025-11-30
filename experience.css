@@ -6,6 +6,14 @@ body {
   display: flex;
   justify-content: center;
   padding: 70px 0;
+  opacity: 0;
+  animation: fadeInPage 1.2s ease forwards;
+}
+
+@keyframes fadeInPage {
+  to {
+    opacity: 1;
+  }
 }
 
 .experience-section {

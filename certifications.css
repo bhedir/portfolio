@@ -7,6 +7,14 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
+  opacity: 0;
+  animation: fadeInPage 1.2s ease forwards;
+}
+
+@keyframes fadeInPage {
+  to {
+    opacity: 1;
+  }
 }
 
 /* TITLE — SAME COLOR AS EXPERIENCE PAGE */
