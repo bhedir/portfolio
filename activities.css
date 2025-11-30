@@ -4,49 +4,68 @@ body {
   font-family: "Poppins", sans-serif;
   color: #fff;
   display: flex;
-  justify-content: center;
-  padding: 70px 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 0 0 0;
   opacity: 0;
   animation: fadeInPage 1.2s ease forwards;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-@keyframes fadeInPage {
-  to {
-    opacity: 1;
-  }
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Remove negative padding (invalid) */
+.title-main,
+.title,
+.title-wrapper {
+  margin-top: -10px !important;
+  padding-top: 0 !important;
 }
 
 /* MAIN CONTAINER */
 .simple-page {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@keyframes fadeInPage {
+  to { opacity: 1; }
 }
 
 /* TITLE */
 .title-main {
   font-size: 2.4rem;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   color: #b39a84;
   font-weight: 700;
   letter-spacing: 0.4px;
 }
 
-/* CARDS CONTAINER */
+/* CARDS */
 .cards-container {
   display: flex;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
-/* CARD STYLE */
 .card {
   background: #0c0d18;
   border: 1px solid #a85a45;
   border-radius: 14px;
   width: 260px;
+  max-width: 90vw; /* prevents breaking layout */
   padding: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   transition: 0.3s;
@@ -57,7 +76,7 @@ body {
   box-shadow: 0 12px 26px rgba(0,0,0,0.4);
 }
 
-/* CARD IMAGE */
+/* IMAGE */
 .card-img {
   width: 100%;
   height: 180px;
@@ -66,7 +85,7 @@ body {
   border: 1px solid #b39a84;
 }
 
-/* CARD TEXT */
+/* TEXT */
 .card-text {
   margin-top: 12px;
   color: #ddd;
@@ -74,37 +93,55 @@ body {
   line-height: 1.4;
 }
 
-/* STAR BACKGROUND */
+/* STARS (unchanged) */
 .stars, .stars2, .stars3 {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-repeat: repeat;
   z-index: -1;
   pointer-events: none;
 }
 
-.stars {
-  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-  opacity: 0.7;
-  animation: moveStars 140s linear infinite;
+/* RESPONSIVE FIXES */
+@media (max-width: 1024px) {
+  .cards-container { gap: 30px; }
+  .card { width: 240px; }
 }
 
-.stars2 {
-  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-  opacity: 0.4;
-  animation: moveStars 200s linear infinite;
+@media (max-width: 768px) {
+  body { padding-top: 40px; }
+  .title-main { font-size: 2rem; margin-bottom: 25px; }
+  .card { width: 220px; }
 }
 
-.stars3 {
-  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-  opacity: 0.2;
-  animation: moveStars 260s linear infinite;
+@media (max-width: 600px) {
+  .simple-page { width: 95%; }
+  .cards-container { gap: 20px; }
+  .card { width: 90%; }
 }
 
-@keyframes moveStars {
-  from { background-position: 0 0; }
-  to { background-position: 2000px 2000px; }
+@media (max-width: 400px) {
+  body { padding-top: 30px; }
+  .title-main { font-size: 1.7rem; }
+  .card { width: 95%; }
+}
+
+/* FORCE PAGE TO FIT WITHOUT SCROLLBAR */
+html, body {
+  height: 100%;
+  overflow-y: hidden;   /* no global scrolling */
+  margin: 0;
+  padding: 0;
+}
+
+/* Cards scroll internally ONLY if needed */
+.cards-container {
+  max-height: calc(100vh - 130px);
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
+
+.cards-container::-webkit-scrollbar {
+  display: none;
 }

@@ -1,0 +1,41 @@
+/* CIRCULAR HOME BUTTON */
+.home-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 9999;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(20, 20, 28, 0.55);
+  border: 1px solid rgba(142, 110, 91, 0.25);
+  border-radius: 50%;
+
+  box-shadow: 0 0 22px rgba(142, 110, 91, 0.25);
+  backdrop-filter: blur(4px);
+
+  transition: 0.25s ease;
+}
+
+/* ICON STYLE */
+.home-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: #958173;
+  transition: 0.3s ease;
+}
+
+/* HOVER */
+.home-btn:hover {
+  background-color: #8e6e5b;
+}
+
+.home-btn:hover svg {
+  stroke: #ffffff;
+  transform: scale(1.12);
+}

@@ -1,0 +1,33 @@
+/* Progress Bar */
+.top-loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 7px;
+  background: linear-gradient(90deg, #ab714c, #7e390b);
+  border-radius: 10px;
+  transition: width 1.2s ease-in-out;
+  z-index: 99999;
+}
+
+/* Page Title INSIDE the bar */
+.page-title-display {
+  position: fixed;
+  top: 0;  /* EXACT SAME POSITION AS BAR */
+  left: 50%;
+  transform: translateX(-50%) translateY(-110%);  
+  /* Moves text slightly above center of the bar */
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #b79a85;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeTitle 0.7s forwards 0.4s;
+  z-index: 100000;
+}
+
+@keyframes fadeTitle {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
