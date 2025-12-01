@@ -79,21 +79,24 @@ body {
 }
 
 .content {
-  padding: 100px 60px 0px 30px;
+  padding: 30px 30px 0px 30px;
   transform: translate3d(0, 0, 26px);
   text-align: left;
+  font-family: "Audiowide", cursive;
 }
 
 .content .title {
   color: #a85a45;
   font-weight: 900;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .content .text {
   color: #50453e;
   font-size: 15px;
-  margin-top: 20px;
+  margin-top: 0;
+  
 }
 
 .bottom {
@@ -233,7 +236,7 @@ body {
 
   /* Content spacing */
   .content {
-    padding: 60px 20px 20px 20px;
+    padding: 40px 60px 0px 30px;
   }
 
   .content .title {

@@ -23,9 +23,7 @@
                   content: `About Me
 
 <p><strong>If you are not a beginner, you can try to find who I am</strong><br>
-I’m <strong>Hadir Ben Arbia</strong>, a cybersecurity engineering student at Polytechnique Sousse, specializing in SOC operations, network security, and Purple Team methodologies. I have a background in Computer Systems Engineering and hold certifications in Python, CCNA 1, and Fortinet technologies. I’m currently interning at <strong>The Red User’s</strong>, working on SOC environments, SIEM tuning, log analysis, and security automation.</p>
-
-<br>
+I’m <strong>Hadir Ben Arbia</strong>, a cybersecurity engineering student at Polytechnique Sousse, specializing in SOC operations, network security, and Purple Team methodologies. I have a background in Computer Systems Engineering and hold certifications in FortiManager, Cisco DevNet, and CCNA1. I am currently <strong> seeking a final-year internship </strong> where I can strengthen my expertise, enhance my competencies, and gain deeper hands-on experience in SOC environments, SIEM tuning, log analysis, and security automation.</p>
 
 <h3>Skills</h3>
 <ul>
@@ -36,21 +34,18 @@ I’m <strong>Hadir Ben Arbia</strong>, a cybersecurity engineering student at P
   <li><strong>Virtualization:</strong> Docker, VirtualBox, multi-zone VM setups</li>
 </ul>
 
-<br>
-
 <h3>Projects</h3>
 <ul>
   <li>Automated SOC Lab (FortiGate, Suricata, Wazuh, Shuffle)</li>
   <li>Secure Network Architecture with Multi-Admin (FortiGate)</li>
   <li>Real-time Python IDS (log analysis & alerting)</li>
   <li>Multi-zone SOC segmentation lab</li>
-  <li>Regular CTF participation (Hack The Box, Securinets)</li>
-</ul`
+  <li>Regular CTF participation </li>
+</ul>`
                 },
                 "flag.txt": {
                   type: "file",
-                  content: `so the flag will not be easy to get ;)
-RmxhZ3tOaWMzX3RSeV91X29ubHlfbjMzRF9Ub19rbm93X015X05BTUVfUmlndGg/\nfQogICAgdGhpcyBpcyBteSBsaXR0bGUgZ2\nlmdCBmb3IgeW91IPCfjoHwn46JC\niAgICBodHRwczovL2dpdGh1Yi5jb20vYmhlZGlyCiAgIGh0dHBzOi8vZ2lwaHkuY29\ntL2dpZnMvdGhlb2ZmaWNlLW5iYy10aGUtb2ZmaWNlLXR2LUZlcmpxUEhZMk9HRFBKUHdFaw==`
+                  content: `so the flag will not be easy to get ;) RmxhZ3tOaWMzX3RSeV91X29ubHlfbjMzRF9Ub19rbm93X015X05BTUVfUmlndGg/\nfQogICAgdGhpcyBpcyBteSBsaXR0bGUgZ2\nlmdCBmb3IgeW91IPCfjoHwn46JC\niAgICBodHRwczovL2dpdGh1Yi5jb20vYmhlZGlyCiAgIGh0dHBzOi8vZ2lwaHkuY29\ntL2dpZnMvdGhlb2ZmaWNlLW5iYy10aGUtb2ZmaWNlLXR2LUZlcmpxUEhZMk9HRFBKUHdFaw==`
                 },
                 "secrets": {
                   type: "dir",
@@ -70,7 +65,7 @@ RmxhZ3tOaWMzX3RSeV91X29ubHlfbjMzRF9Ub19rbm93X015X05BTUVfUmlndGg/\nfQogICAgdGhpcy
           children: {
             "config.txt": {
               type: "file",
-              content: "system=online\ntracking=disabled\nuser=visitor"
+              content: "Bro what are you looking for here? 🤨\n haw flag al faza\nFlag{ChoUch3n_iNsEcuRiTiEs_4re_S3rIouS}"
             }
           }
         }
@@ -181,7 +176,8 @@ clear       - Clear terminal
 about       - Learn about me
 hack        - Hacker mode activated
 cowsay      - Cute cow message
-ufoundme     - Open my profile in a new tab
+ufoundme    - Open my profile in a new tab
+mycv        - Open my CV in a new tab
 `;
 
   // ================
@@ -195,6 +191,15 @@ ufoundme     - Open my profile in a new tab
     ufoundme: async () => {
       print("Opening profile...");
       window.open("https://www.youtube.com/watch?v=xlkDgyQu3_8", "_blank");
+    },
+
+    mycv: async () => {
+      print("Opening CV in embedded viewer...");
+      const w = window.open("", "_blank", "width=800,height=600");
+      w.document.write(`
+        <title>My CV</title>
+        <iframe src="assets/Hadir_Ben_Arbia_CV_Cybersecurity.pdf" style="width:100%;height:100%;" frameborder="0"></iframe>
+      `);
     },
 
     ls: async () => {
@@ -247,6 +252,15 @@ ufoundme     - Open my profile in a new tab
     cowsay: async () => printBlock(cowsayArt, 4)
   };
 
+  function detectXSS(input) {
+    const htmlPattern = /<\/?[^>]+>/g; // detect <something>
+    if (htmlPattern.test(input)) {
+      print("aa ya 7alouf testi fia ?");
+      return true;
+    }
+    return false;
+  }
+
   // =====================
   //   COMMAND EXECUTION
   // =====================
@@ -261,15 +275,20 @@ ufoundme     - Open my profile in a new tab
 
     if (cmd in commands) return commands[cmd](args);
 
-    print(`${cmd}: command not found`);
+    print(`${cmd}: mahech VM bel7a9 raw akhtanii 😡`);
   }
 
   // Input handling
   inputEl.addEventListener('keydown', async (e) => {
     if (e.key === 'Enter') {
       const val = inputEl.value;
+      if (detectXSS(val)) {
+        inputEl.value = '';
+        return; 
+      }
       inputEl.value = '';
       inputEl.disabled = true;
+      
       await runCommand(val);
       inputEl.disabled = false;
       inputEl.focus();
