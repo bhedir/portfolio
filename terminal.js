@@ -35,9 +35,7 @@ SIEM event-correlation setup during internship
 
 Regular CTF participation on Hack The Box
 `,
-    "flag.txt": `Flag{Nic3_tRy_u_only_n33D_To_know_My_NAME_Rigth?}
-    this is my little gift for you 🎁🎉 <a href="https://github.com/bhedir" target="_blank" style="color:#14ff4e; text-decoration:underline;">
-    https://github.com/bhedir</a>`
+    "flag.txt": `so the flag will not be easy to get ;)\nRmxhZ3tOaWMzX3RSeV91X29ubHlfbjMzRF9Ub19rbm93X015X05BTUVfUmlndGg/\nfQogICAgdGhpcyBpcyBteSBsaXR0bGUgZ2lmdCBmb3IgeW91IPCfjoHwn46JC\niAgICBodHRwczovL2dpdGh1Yi5jb20vYmhlZGlyCiAgIGh0dHBzOi8vZ2lwaHkuY29tL2dpZnMvdGhl\nb2ZmaWNlLW5iYy10aGUtb2ZmaWNlLXR2LUZlcmpxUEhZMk9HRFBKUHdFaw==\n`
   };
 
   // cowsay ASCII
