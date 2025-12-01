@@ -1,7 +1,7 @@
 // Inject CSS
 const headerCSS = document.createElement("link");
 headerCSS.rel = "stylesheet";
-headerCSS.href = "header.css";
+headerCSS.href = "css/header.css";
 document.head.appendChild(headerCSS);
 
 // Create the animated top bar

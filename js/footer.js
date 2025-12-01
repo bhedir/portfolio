@@ -1,7 +1,7 @@
 // Load footer CSS automatically
 const footerCSS = document.createElement("link");
 footerCSS.rel = "stylesheet";
-footerCSS.href = "footer.css";
+footerCSS.href = "css/footer.css";
 document.head.appendChild(footerCSS);
 
 // Inject footer HTML after page loads

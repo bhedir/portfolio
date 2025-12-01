@@ -1,0 +1,398 @@
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* BODY */
+body {
+  background: #05060f;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.6s ease-in-out;
+  overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MAIN LANDING AREA */
+.landing-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 40px;
+
+  /* smooth visual appearance */
+  backdrop-filter: blur(6px);
+}
+
+/* PROFILE IMAGE — modern soft shadow + rounder */
+.left-side .profile-photo {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35),
+              0 0 25px rgba(160, 130, 110, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-side .profile-photo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.45),
+              0 0 45px rgba(160, 130, 110, 0.4);
+}
+
+/* TEXT — modern layout */
+.right-side {
+  max-width: 500px;
+  animation: fadeSlide 0.8s ease;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.right-side h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #e1d4ca;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.right-side .intro-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #bba79a;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+/* MODERN BUTTON — glass, gradient, soft hover */
+.next-btn {
+  display: inline-block;
+  padding: 14px 26px;
+  font-weight: 600;
+  border-radius: 14px;
+  text-decoration: none;
+
+  background: linear-gradient(135deg, #b79a85, #a88f7e);
+  color: #05060f;
+
+  box-shadow: 0 10px 30px rgba(160, 130, 110, 0.35);
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.next-btn:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(160, 130, 110, 0.45);
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .landing-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 35px;
+    padding-top: 70px;
+  }
+}
+
+/* STAR BACKGROUND */
+.stars, .stars2, .stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.stars {
+  opacity: 0.7;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  animation: moveStars 150s linear infinite;
+}
+
+.stars2 {
+  opacity: 0.45;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  animation: moveStars 210s linear infinite;
+}
+
+.stars3 {
+  opacity: 0.2;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  animation: moveStars 270s linear infinite;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 2000px 2000px; }
+}
+
+/* FOOTER — modernized */
+footer {
+  padding: 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #d5c3b4;
+  letter-spacing: 4px;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: #9d8a7a;
+}
+
+/* ICON BOX — glass effect */
+.footer-icons {
+  display: flex;
+  gap: 20px;
+  background: rgba(255,255,255,0.07);
+  padding: 10px 16px;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 25px rgba(160, 130, 110, 0.25);
+  margin-bottom: 20px;
+}
+
+/* Icon container */
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background: #1b1b22;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.socialContainer:hover {
+  transform: translateY(-4px);
+}
+
+/* icon */
+.socialSvg {
+  width: 18px;
+}
+
+.socialSvg path {
+  fill: #fff;
+}
+
+/* hover colors */
+.containerOne:hover { background-color: #b79a85; }
+.containerTwo:hover { background-color: #a88f7e; }
+.containerThree:hover { background-color: #8c7566; }
+.containerFour:hover { background-color: #c4ad9b; }
+
+/* SCHOOL LINK STYLE */
+.school-link {
+  position: relative;
+  color: #d5c3b4;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 2px 4px;
+  border-radius: 6px;
+  transition: 0.25s ease;
+}
+
+/* Underline */
+.school-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #b79a85;
+  opacity: 0.8;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* HOVER EFFECT – soft background highlight */
+.school-link:hover {
+  background: linear-gradient(135deg, #b79a85, #a88f7e);
+  color: #05060f;
+  padding: 2px 6px;
+}
+
+.school-link:hover::after {
+  height: 0;
+  opacity: 0;
+}
+
+
+.right-side .intro-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+/* ===================== */
+/*   MOBILE OPTIMIZATION */
+/* ===================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .parent {
+    width: 350px;
+    height: auto;
+  }
+
+  .content {
+    padding: 80px 40px 20px 20px;
+  }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+  /* Prevent sideways scrolling */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Card resizing */
+  .parent {
+    width: 92%;
+    height: auto; /* card grows with text */
+  }
+
+  /* Reduce 3D animation on phones (smooth & faster) */
+  .parent:hover .card {
+    transform: none;
+  }
+
+  /* Content spacing */
+  .content {
+    padding: 60px 20px 20px 20px;
+  }
+
+  .content .title {
+    font-size: 18px;
+  }
+
+  .content .text {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  /* Smaller circles for the logo */
+  .logo .circle1 { width: 120px; }
+  .logo .circle2 { width: 100px; }
+  .logo .circle3 { width: 80px; }
+  .logo .circle4 { width: 60px; }
+  .logo .circle5 { width: 40px; }
+
+  /* Reduce star animation for performance */
+  .stars, .stars2, .stars3 {
+    opacity: 0.3;
+    animation-duration: 200s;
+  }
+}
+/* =============================== */
+/*   TOP-LEFT GRADIENT BUTTON      */
+/* =============================== */
+
+.corner-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  display: inline-block;
+  padding: 2px;
+  border-radius: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 9999;
+
+  background: #1f2937; /* gray-800 */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+.corner-btn:hover {
+  transform: scale(1.05);
+}
+
+.corner-btn:active {
+  transform: scale(0.95);
+}
+
+.corner-btn-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 2px;
+  background: linear-gradient(to right, #2dd4bf, #3b82f6, #a855f7);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.corner-btn:hover .corner-btn-gradient {
+  opacity: 1;
+}
+
+.corner-btn-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0f0f15; /* gray-950 */
+  padding: 12px 22px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  font-family: "Poppins", sans-serif;
+}
+
+.corner-btn-text {
+  transition: transform 0.4s ease;
+  
+
+}
+
+.corner-btn:hover .corner-btn-text {
+  transform: translateX(4px);
+}
+
+.corner-btn-icon {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.4s ease;
+}
+
+.corner-btn:hover .corner-btn-icon {
+  transform: translateX(4px);
+}

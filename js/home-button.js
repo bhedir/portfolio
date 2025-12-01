@@ -1,7 +1,7 @@
 // Inject CSS
 const css = document.createElement("link");
 css.rel = "stylesheet";
-css.href = "home-button.css";
+css.href = "css/home-button.css";
 document.head.appendChild(css);
 
 // Insert button
