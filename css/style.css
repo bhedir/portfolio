@@ -401,7 +401,7 @@ footer {
   height: 50px;
   border: none;
   border-radius: 50%;
-  background-color: rgb(27, 27, 27);
+  background-color: rgb(73, 70, 67);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -421,15 +421,15 @@ footer {
 
 
 .svgIcon {
-  fill: rgb(214, 178, 255);
+  fill: rgb(255, 178, 178);
 }
 
 .icon2 {
   width: 18px;
   height: 5px;
-  border-bottom: 2px solid rgb(182, 143, 255);
-  border-left: 2px solid rgb(182, 143, 255);
-  border-right: 2px solid rgb(182, 143, 255);
+  border-bottom: 2px solid rgb(255, 216, 178);
+  border-left: 2px solid rgb(255, 216, 178);
+  border-right: 2px solid rgb(255, 216, 178);
 }
 
 .tooltip {
@@ -467,7 +467,7 @@ footer {
 }
 
 .Btn:hover {
-  background-color: rgb(150, 94, 255);
+  background-color: rgb(165, 84, 205);
   transition-duration: .3s;
 }
 
