@@ -319,3 +319,80 @@ footer {
     animation-duration: 200s;
   }
 }
+/* =============================== */
+/*   TOP-LEFT GRADIENT BUTTON      */
+/* =============================== */
+
+.corner-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  display: inline-block;
+  padding: 2px;
+  border-radius: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 9999;
+
+  background: #1f2937; /* gray-800 */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+.corner-btn:hover {
+  transform: scale(1.05);
+}
+
+.corner-btn:active {
+  transform: scale(0.95);
+}
+
+.corner-btn-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 2px;
+  background: linear-gradient(to right, #2dd4bf, #3b82f6, #a855f7);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.corner-btn:hover .corner-btn-gradient {
+  opacity: 1;
+}
+
+.corner-btn-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0f0f15; /* gray-950 */
+  padding: 12px 22px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  font-family: "Poppins", sans-serif;
+}
+
+.corner-btn-text {
+  transition: transform 0.4s ease;
+  
+
+}
+
+.corner-btn:hover .corner-btn-text {
+  transform: translateX(4px);
+}
+
+.corner-btn-icon {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.4s ease;
+}
+
+.corner-btn:hover .corner-btn-icon {
+  transform: translateX(4px);
+}

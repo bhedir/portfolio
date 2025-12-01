@@ -1,0 +1,260 @@
+/* PAGE BACKGROUND + PALETTE */
+body {
+  background: #05060f;
+  font-family: "Poppins", sans-serif;
+  color: #14ff4e; /* global green text */
+  display: flex;
+  justify-content: center;
+  padding: 70px 0;
+}
+
+/* MAIN CONTAINER */
+.simple-page {
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* TITLE (same as projects page) */
+.title-main {
+  font-size: 2.4rem;
+  margin-bottom: 60px;
+  color: #b39a84;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+/* BUTTON ROW */
+.button-row {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* STAR BACKGROUND */
+.stars, .stars2, .stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.stars {
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.7;
+  animation: moveStars 140s linear infinite;
+}
+
+.stars2 {
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.4;
+  animation: moveStars 200s linear infinite;
+}
+
+.stars3 {
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.2;
+  animation: moveStars 260s linear infinite;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 2000px 2000px; }
+}
+
+/* CENTER TERMINAL */
+.terminal-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  margin-bottom: 80px;
+}
+
+/* TERMINAL CARD */
+.card {
+  padding: 0.75rem;
+  overflow: hidden;
+  border: 0.25px solid #2c2c2c;
+  border-radius: 20px;
+  background-color: #0d0f1a; /* dark blue fits palette */
+  backdrop-filter: blur(40px);
+  box-shadow: 0 0 40px 10px rgba(0, 102, 255, 0.4);
+  width: 700px;
+  max-width: 95%;
+}
+
+/* WRAPPER */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 10;
+  border: 0.5px solid #3d3d3d;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* TERMINAL AREA */
+.terminal {
+  font-family: "Fira Code", "JetBrains Mono", "Source Code Pro", monospace;
+}
+
+/* HEADER */
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  padding-inline: 12px;
+  background-color: #111418;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #8e8e8e;
+  font-family: "Poppins", sans-serif;
+}
+.title svg {
+  color: #1e90ff;
+}
+
+/* BODY */
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  line-height: 22px;
+  color: #14ff4e; /* green terminal text */
+  background-color: #000;
+  white-space: pre-wrap;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  overflow-x: auto;
+  font-family: "Fira Code", "JetBrains Mono", "Source Code Pro", monospace;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Lines */
+.pre {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+}
+.pre code:nth-child(1) {
+  color: #575757;
+}
+.pre code:nth-child(2) {
+  color: #e34ba9;
+}
+
+/* Typing animation */
+.cmd {
+  margin-top: 12px;
+  font-size: 15px;
+  position: relative;
+  color: #e34ba9;
+}
+.cmd::before {
+  content: attr(data-cmd);
+  animation: typing 6s steps(22) infinite;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.cmd::after {
+  content: "_";
+  margin-left: 3px;
+  border-right: 0.15em solid #e34ba9;
+  animation: blink 0.6s infinite;
+}
+
+/* Animations */
+@keyframes typing {
+  0%,100% { width: 0 }
+  20%,80% { width: 180px }
+}
+@keyframes blink {
+  50% { opacity: 0 }
+}
+
+/* Terminal card base */
+.card#dev-terminal {
+  padding: 0.5rem;
+  overflow: hidden;
+  border: 0.25px solid #2c2c2c;
+  border-radius: 14px;
+  background-color: rgba(13,15,26,0.98);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 0 40px 10px rgba(0, 102, 255, 0.12);
+  width: 760px;
+  max-width: calc(100% - 40px);
+}
+
+/* wrapper/header */
+.head { padding: 0.45rem 0.7rem; background: #0f1116; display:flex; align-items:center; justify-content:space-between; }
+.title { color: #9ea6b6; font-weight:600; display:flex; align-items:center; gap:8px; font-family: "Poppins", sans-serif; }
+.title svg { color: #4fb0ff; }
+
+/* prompt + input row */
+.terminal-input-row {
+  display:flex;
+  gap:8px;
+  align-items:center;
+  padding: 0.6rem 1rem;
+  background: transparent;
+}
+.prompt {
+  color: #6bff82; /* lighter green prompt */
+  font-family: "Fira Code", "JetBrains Mono", monospace;
+}
+#terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #14ff4e; /* green text */
+  font-family: "Fira Code", "JetBrains Mono", "Source Code Pro", monospace;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* make body text non-editable */
+.body * { user-select: text; pointer-events: none; }
+
+/* small touches */
+.copy_toggle { opacity: 0.9; border-radius:6px; padding:4px 6px; background:#0d1115; border: 0.5px solid #2b2b2b; color:#9ea6b6; }
+.card#dev-terminal:focus-within { box-shadow: 0 0 60px 16px rgba(79,176,255,0.06); }
+
+/* cursor for typed lines */
+.line-cursor { border-right: 0.12em solid #14ff4e; padding-right:2px; font-family: "Fira Code", "JetBrains Mono", monospace; }
+
+/* hacker mode glitch effect */
+.hacker-output {
+  color: #14ff4e;
+  animation: glitch 1s steps(2, end) 3;
+}
+@keyframes glitch {
+  0% { transform: translateX(0) }
+  20% { transform: translateX(-2px) skewX(-1deg) }
+  40% { transform: translateX(2px) skewX(1deg) }
+  60% { transform: translateX(-1px) skewX(-0.5deg) }
+  80% { transform: translateX(1px) skewX(0.5deg) }
+  100% { transform: translateX(0) }
+}
+
+/* responsive */
+@media (max-width:600px) {
+  .card#dev-terminal { width: 95%; }
+  .body { max-height: 260px; font-size:13px; }
+}

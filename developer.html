@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Developer Mode </title>
+
+<!-- PAGE CSS -->
+<link rel="stylesheet" href="developer.css" />
+<link rel="stylesheet" href="buttons.css" />
+
+
+
+</head>
+
+<body>
+
+<!-- TERMINAL CARD (place inside <main class="simple-page">) -->
+<div class="terminal-card" aria-hidden="false">
+  <div class="card" id="dev-terminal" role="region" aria-label="Developer terminal">
+    <div class="wrap terminal">
+      <div class="head">
+        <div class="title">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4 17l6-5l-6-5v10zm8-10h8v2h-8v-2zm0 6h8v2h-8v-2z"/>
+          </svg>
+          developer-mode
+        </div>
+        <div class="copy_toggle" title="Terminal ready" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M16 7H8v10h8V7z" />
+            <path d="M21 7v10a2 2 0 0 1-2 2H8" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="body" id="terminal-body" aria-live="polite"></div>
+
+      <div class="terminal-input-row" aria-hidden="false">
+        <span class="prompt">$</span>
+        <input id="terminal-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+               placeholder="type a command (try: help)" aria-label="Terminal command input">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- STAR BACKGROUND -->
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
+
+<script src="footer.js"></script>
+<script src="home-button.js"></script>
+<script src="terminal.js"></script>
+
+</body>
+</html>
