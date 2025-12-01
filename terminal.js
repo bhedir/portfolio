@@ -22,31 +22,30 @@
                   type: "file",
                   content: `About Me
 
-I’m Hadir Ben Arbia, a cybersecurity engineering student at Polytechnique Sousse with a background in Computer Systems Engineering and certifications in Python and CCNA 1. I’m currently interning at The Red User’s, working on SOC environments, SIEM tuning, and network security tasks.
+<p><strong>If you are not a beginner, you can try to find who I am</strong><br>
+I’m <strong>Hadir Ben Arbia</strong>, a cybersecurity engineering student at Polytechnique Sousse, specializing in SOC operations, network security, and Purple Team methodologies. I have a background in Computer Systems Engineering and hold certifications in Python, CCNA 1, and Fortinet technologies. I’m currently interning at <strong>The Red User’s</strong>, working on SOC environments, SIEM tuning, log analysis, and security automation.</p>
 
-Skills
+<br>
 
-Networking & systems (Linux, Windows, macOS)
+<h3>Skills</h3>
+<ul>
+  <li><strong>Networking & Systems:</strong> Linux, Windows Server, Active Directory, VLAN, ACL, OSPF, NAT</li>
+  <li><strong>Security Tools:</strong> Fortinet (FortiGate / FortiSIEM / FortiManager), Wazuh, Suricata, Burp Suite, Nmap, Wireshark, OpenVAS</li>
+  <li><strong>Automation:</strong> Python scripting, log parsing, security automation</li>
+  <li><strong>Packet & Log Analysis:</strong> Wireshark, PyShark, SOC monitoring</li>
+  <li><strong>Virtualization:</strong> Docker, VirtualBox, multi-zone VM setups</li>
+</ul>
 
-Security tools: Wazuh, Suricata, Fortinet SIEM, Burp Suite
+<br>
 
-Python scripting & automation
-
-Packet analysis (Wireshark, PyShark)
-
-Virtualization: Docker, VirtualBox, VMs
-
-Projects
-
-Python-based network sniffer (TLS/HTTPS aware)
-
-SOC mini-architecture & segmentation labs
-
-Network & communication security cheatsheet
-
-SIEM event-correlation setup during internship
-
-Regular CTF participation on Hack The Box`
+<h3>Projects</h3>
+<ul>
+  <li>Automated SOC Lab (FortiGate, Suricata, Wazuh, Shuffle)</li>
+  <li>Secure Network Architecture with Multi-Admin (FortiGate)</li>
+  <li>Real-time Python IDS (log analysis & alerting)</li>
+  <li>Multi-zone SOC segmentation lab</li>
+  <li>Regular CTF participation (Hack The Box, Securinets)</li>
+</ul`
                 },
                 "flag.txt": {
                   type: "file",
