@@ -121,21 +121,20 @@ RmxhZ3tOaWMzX3RSeV91X29ubHlfbjMzRF9Ub19rbm93X015X05BTUVfUmlndGg/\nfQogICAgdGhpcy
 
   // Typing effect
   function typeText(targetEl, text, speed = 20) {
-  return new Promise(resolve => {
-    targetEl.textContent = '';
-    let i = 0;
-    const t = setInterval(() => {
-      targetEl.textContent += text[i];  // FIXED
-      i++;
-      bodyEl.scrollTop = bodyEl.scrollHeight;
-      if (i >= text.length) {
-        clearInterval(t);
-        resolve();
-      }
-    }, speed);
-  });
-}
-
+    return new Promise(resolve => {
+      targetEl.textContent = '';
+      let i = 0;
+      const t = setInterval(() => {
+        targetEl.textContent += text[i];
+        i++;
+        bodyEl.scrollTop = bodyEl.scrollHeight;
+        if (i >= text.length) {
+          clearInterval(t);
+          resolve();
+        }
+      }, speed);
+    });
+  }
 
   async function print(text, speed = 18, addClass = '') {
     const el = document.createElement('div');
@@ -182,8 +181,8 @@ clear       - Clear terminal
 about       - Learn about me
 hack        - Hacker mode activated
 cowsay      - Cute cow message
+ufoundme     - Open my profile in a new tab
 `;
-
 
   // ================
   //   COMMANDS
@@ -192,6 +191,11 @@ cowsay      - Cute cow message
     help: async () => printBlock(helpText, 6),
 
     pwd: async () => print(cwd),
+
+    ufoundme: async () => {
+      print("Opening profile...");
+      window.open("https://www.youtube.com/watch?v=xlkDgyQu3_8", "_blank");
+    },
 
     ls: async () => {
       const node = fsGet(cwd);
