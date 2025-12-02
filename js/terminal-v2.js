@@ -45,7 +45,8 @@ I’m <strong>Hadir Ben Arbia</strong>, a cybersecurity engineering student at P
                 },
                 "flag.txt": {
                   type: "file",
-                  content: `so the flag will not be easy to get ;) RmxhZ3tOaWMzX3RSeV91X29ubHlfbjMzRF9Ub19rbm93X015X05BTUVfUmlndGg/\nfQogICAgdGhpcyBpcyBteSBsaXR0bGUgZ2\nlmdCBmb3IgeW91IPCfjoHwn46JC\niAgICBodHRwczovL2dpdGh1Yi5jb20vYmhlZGlyCiAgIGh0dHBzOi8vZ2lwaHkuY29\ntL2dpZnMvdGhlb2ZmaWNlLW5iYy10aGUtb2ZmaWNlLXR2LUZlcmpxUEhZMk9HRFBKUHdFaw==`
+                  content: `so the flag will not be easy to get ;)\nRmxhZ3tOaWMzX3RSeV91X29ubHlfbjMzRF9Ub19rbm93X015X05BTUVfUmlndGg/\nfQp0aGlzIGlzIG15IGxpdHRsZSBnaWZ0IGZvciB5b3UKaHR0cHM6Ly9naXRodWIu\nY29tL2JoZWRpcgpodHRwczovL2dpcGh5LmNvbS9naWZzL3RoZW9mZmljZS1uYmMtd\nGhlLW9mZmljZS10di1GZXJqcVBIWTJPR0RQSlB3RWsK
+`
                 },
                 "secrets": {
                   type: "dir",
