@@ -1,7 +1,7 @@
 // Load footer CSS automatically
 const footerCSS = document.createElement("link");
 footerCSS.rel = "stylesheet";
-footerCSS.href = "css/footer.css";
+footerCSS.href = "css/footer-v2.css";
 document.head.appendChild(footerCSS);
 
 // Inject footer HTML after page loads
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </a>
       </div>
 
-      <p class="footer-copy">© 2025 Hedir Bel Arbia</p>
+      <p class="footer-copy">© 2025 Hadir Ben Arbia</p>
     </footer>
   `;
 
