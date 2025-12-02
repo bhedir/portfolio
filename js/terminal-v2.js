@@ -18,11 +18,11 @@
             "visitor": {
               type: "dir",
               children: {
-                "AbouteMe.txt": {
+                "AboutMe.txt": {
                   type: "file",
                   content: `About Me
 
-<p><strong>If you are not a beginner, you can try to find who I am</strong><br>
+
 I’m <strong>Hadir Ben Arbia</strong>, a cybersecurity engineering student at Polytechnique Sousse, specializing in SOC operations, network security, and Purple Team methodologies. I have a background in Computer Systems Engineering and hold certifications in FortiManager, Cisco DevNet, and CCNA1. I am currently <strong> seeking a final-year internship </strong> where I can strengthen my expertise, enhance my competencies, and gain deeper hands-on experience in SOC environments, SIEM tuning, log analysis, and security automation.</p>
 
 <h3>Skills</h3>
@@ -238,7 +238,7 @@ mycv        - Open my CV in a new tab
     clear: async () => clearTerminal(),
 
     about: async () => {
-      const path = "/home/visitor/AbouteMe.txt";
+      const path = "/home/visitor/AboutMe.txt";
       await printBlock(fsGet(path).content, 6);
     },
 
